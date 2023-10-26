@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "OzonLogWallet",
+    "version": "1.0",
+  
+    "description": "Adds a money counter to the wallet in real time for pvz-ozon-dostavka.",
+    "icons": {
+      "48": "icons/wallet-48.png"
+    },
+  
+    "applications": {
+      "gecko": {
+        "id": "ozonlogwallet@seadigital.ru",
+        "strict_min_version": "45.0"
+      }
+    },
+
+    "permissions": ["*://*.pvz.ozon-dostavka.ru/*"],
+
+    "browser_action": {
+      "default_icon": "icons/wallet-32.png",
+      "default_title": "OzonLogWallet"
+    },
+
+    "web_accessible_resources": [
+        "icons/wallet-24.png"
+    ],
+  
+    "content_scripts": [
+      {
+        "matches": ["*://*.pvz.ozon-dostavka.ru/*"],
+        "js": ["wallet-main.js"]
+      }
+    ]
+  }
+  
